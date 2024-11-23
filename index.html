@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skate Shop</title>
+    <link rel="stylesheet" href="ESTILOINSANO.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            background-color: #1a1a1a;
+            color: #fff;
+            scroll-behavior: smooth;
+        }
+      .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background-color: #333;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo img {
+            width: 120px;
+        }
+        .nav .menu {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+        .nav .menu a {
+            text-decoration: none;
+            color: #f0f0f0;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        .nav .menu a:hover {
+            color: #ff6b35;
+        }
+        .submenu {
+            display: none;
+            position: absolute;
+            background-color: #444;
+            list-style: none;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .menu li:hover .submenu {
+            display: block;
+        }
+        .hero {
+            text-align: center;
+            padding: 80px 20px;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('background-skate.jpg');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        .cta {
+            background-color: #ff6b35;
+            border: none;
+            color: #fff;
+            padding: 12px 25px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .cta:hover {
+            background-color: #e65a2e;
+        }
+        .product-section {
+            padding: 60px 20px;
+            background-color: #252525;
+            text-align: center;
+        }
+        .product-section h2 {
+            font-size: 32px;
+            margin-bottom: 30px;
+            color: #ff6b35;
+        }
+        .product-gallery {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .product-item img {
+            width: 200px;
+            border-radius: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .product-item img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(255, 107, 53, 0.8);
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            border-top: 2px solid #ff6b35;
+        }
+        .social-media {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 10px;
+        }
+        .social-media li img {
+            width: 30px;
+        }
+    </style>
+    <script>
+        // Función para mostrar el precio al hacer clic
+        function showPrice(event) {
+            const priceElement = event.currentTarget.querySelector('.price');
+            if (priceElement.style.display === 'none' || priceElement.style.display === '') {
+                priceElement.style.display = 'block';
+            } else {
+                priceElement.style.display = 'none';
+            }
+        }
+    </script>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="logo.JPG" alt="Logo Skibidi Skate">
+        </div>
+        <nav class="nav">
+            <ul class="menu">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#tienda">Tienda</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" id="inicio">
+            <h1>Bienvenido a Skibidi Skate</h1>
+            <p>¡Descubre lo mejor en equipo de skate y vive la adrenalina al máximo!</p>
+            <button class="cta">Explora Ahora</button>
+        </section>
+
+    
+
+        <section id="tienda" class="product-section">
+            <h2>Skates</h2>
+            <div class="product-gallery">
+                <div class="product-item" onclick="showPrice(event)">
+                    <img src="skate1.jfif" alt="CRAZY SKATES JAM POP ADJUSTABLE ROLLER">
+                    <p>CRAZY SKATES JAM POP ADJUSTABLE ROLLER</p>
+                    <div class="price" style="display:none;">$1500 MXN</div> 
+                </div>
+                <div class="product-item" onclick="showPrice(event)">
+                    <img src="skate2.jpg" alt="SKATE PLAYLIFE DEADLY EAGLE 8’’X31’’">
+                    <p>SKATE PLAYLIFE DEADLY EAGLE 8’’X31’’</p>
+                    <div class="price" style="display:none;">$2400 MXN</div> 
+                </div>
+                <div class="product-item" onclick="showPrice(event)">
+                    <img src="skate3.jpg" alt="SKATE BIRDHOUSE FALCON III 7,75’’ NEGRO">
+                    <p>SKATE BIRDHOUSE FALCON III 7,75’’ NEGRO</p>
+                    <div class="price" style="display:none;">$1999 MXN 20% OFF</div> 
+                </div>
+            </div>
+        </section>
+
+
+        <section id="bicicletas" class="product-section">
+            <h2>Bicicletas</h2>
+            <div class="product-gallery">
+                <div class="product-item" onclick="showPrice(event)">
+                    <img src="BICI1.png" alt="Bicicleta 29 Alubike XTA 1.0 Cues 1x10 2024">
+                    <p>Bicicleta 29 Alubike XTA 1.0 Cues 1x10 2024</p>
+                    <div class="price" style="display:none;">$12,999 MXN</div> 
+                </div>
+                <div class="product-item" onclick="showPrice(event)">
+                    <img src="bici2.jpg" alt="Bicicleta 29 Cannondale Jekyll 1">
+                    <p>Bicicleta 29 Cannondale Jekyll 1</p>
+                    <div class="price" style="display:none;">$115,990 MXN</div> 
+                </div>
+                <div class="product-item" onclick="showPrice(event)">
+                    <img src="bici3.jpg" alt="Bicicleta R.12 Mercurio Cuty Rosa">
+                    <p>Bicicleta R.12 Mercurio Cuty Rosa</p>
+                    <div class="price" style="display:none;">$2,819 MXN (SOLO GENTE INSANA🔥🥵)</div> 
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="camisas 40% OFF EN CAMISAS" class="product-section">
+            <h2>Camisas</h2>
+            <div class="product-gallery">
+                <div class="product-item" onclick="showPrice(event)">
+                    <img src="CAMISA1.jpg" alt="Camisa Manga Larga Dickies Sacramento Red">
+                    <p>Camisa Manga Larga Dickies Sacramento Red</p>
+                    <div class="price" style="display:none;">$1200 MXN</div> 
+                </div>
+                <div class="product-item" onclick="showPrice(event)">
+                    <img src="CAMISA2.jpg" alt="Camiseta The Dudes Too Short Smokes Black">
+                    <p>Camiseta The Dudes Too Short Smokes Black</p>
+                    <div class="price" style="display:none;">$900 MXN</div> 
+                </div>
+                <div class="product-item" onclick="showPrice(event)">
+                    <img src="camisa3.png" alt="Skibidi Skate">
+                    <p>LA MEJOR CAMISA SKATER 🗣</p>
+                    <div class="price" style="display:none;">$FREE (EN LA COMPRA DE $115,990 MXN 🔥)</div> 
+                </div>
+            </div>
+        </section>
+
+
+
+        <section id="quimicos" class="product-section">
+            <h2>Líquidos y Químicos</h2>
+            <div class="product-gallery">
+                <div class="product-item" onclick="showPrice(event)">
+                    <img src="QUIMICO1.jpg" alt="SONIC Citrus - Limpiador de rodamientos de patines">
+                    <p>SONIC Citrus - Limpiador de rodamientos de patines 8 ONZAS</p>
+                    <div class="price" style="display:none;">$800 MXN</div> 
+                </div>
+                <div class="product-item" onclick="showPrice(event)">
+                    <img src="QUIMICO2.jpg" alt="WD-40 Specialist® Lubricante Seco con PTFE">
+                    <p>WD-40 Specialist® Lubricante Seco con PTFE</p>
+                    <div class="price" style="display:none;">$1099 MXN</div>
+                </div>
+                <div class="product-item" onclick="showPrice(event)">
+                    <img src="QUIMICO3.jpg" alt="Cera Grizzly: Grease Red">
+                    <p>Cera Grizzly: Grease Red</p>
+                    <div class="price" style="display:none;">$160 MXN</div> 
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 Skibidi Shop. Todos los derechos reservados.</p>
+        <ul class="social-media">
+            <li><a href="#"><img src="facebook-icon.png" alt="Facebook"></a></li>
+            <li><a href="#"><img src="instagram-icon.png" alt="Instagram"></a></li>
+            <li><a href="#"><img src="twitter-icon.png" alt="Twitter"></a></li>
+        </ul>
+    </footer>
+</body>
+</html>
